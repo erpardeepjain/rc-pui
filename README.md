@@ -18,7 +18,7 @@ Install using `npm install @erpardeepjain/rc-pui`
 | showLabel         | boolean             
 | showStartEndPage  | boolean     
 
-<Pagination paginationConfig={paginationConfig} />
+`<Pagination paginationConfig={paginationConfig} />`
 const {pageCount, itemCount, currentPage, onPageChange, showLabel, showStartEndPage } = paginationConfig;
 
 ### `Currency Formatter`
@@ -35,4 +35,4 @@ const {pageCount, itemCount, currentPage, onPageChange, showLabel, showStartEndP
 | eleClass    | string      |
 
 
-Example  - <CurrencyFormat prefix="$" value="123456789" zeroAllowed />
+Example  - `<CurrencyFormat prefix="$" value="123456789" zeroAllowed />`
