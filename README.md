@@ -1,5 +1,6 @@
 This Package contains below React UI Components available to use
-### `Pagination`
+
+* Documentation is still incomplete, will try to update asap, PR's for New Components are Welcomed *
 
 ### Install
 
@@ -7,7 +8,9 @@ Install using `npm install @erpardeepjain/rc-pui`
 
 ### Usage 
 
-#### Pagination props
+### `Pagination`
+
+#### props
 
 | Name              | Description      
 | -----------       | -----------      
@@ -23,7 +26,7 @@ const {pageCount, itemCount, currentPage, onPageChange, showLabel, showStartEndP
 
 ### `Currency Formatter`
 
-#### Currency props
+#### props
 
 | Name        | Description | 
 | ----------- | ----------- |
@@ -36,3 +39,16 @@ const {pageCount, itemCount, currentPage, onPageChange, showLabel, showStartEndP
 
 
 Example  - `<CurrencyFormat prefix="$" value="123456789" zeroAllowed />`
+
+### `Search Input`
+
+#### props
+onChange, placeholder, waitTime, minSearchChar
+| Name          | Description | 
+| -----------   | ----------- |
+| placeholder   | string      |
+| waitTime      | intiger     |
+| minSearchChar | intiger     |
+| onChange      | function    |
+
+Example  - `<SearchInput onChange={onSearchCB} placeholder="Search Record" waitTime={300} minSearchChar={2} />`
