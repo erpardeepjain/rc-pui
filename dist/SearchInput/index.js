@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+import React from 'react';
 const SearchInput = ({
   onChange,
   placeholder,
