@@ -1,6 +1,10 @@
 This Package contains below React UI Components available to use
 
-* Documentation is still incomplete, will try to update asap, PR's for New Components are Welcomed *
+* Pagination * Currency Formatter * Search Input
+
+* Working Demo - https://stackblitz.com/edit/react-qgvr8r
+
+** Documentation is still incomplete, will try to update asap, PR's for New Components are Welcomed
 
 ### Install
 

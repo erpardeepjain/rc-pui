@@ -1,3 +1,5 @@
+import React from 'react';
+
 const CurrencyFormat = ({ value, prefix, zeroAllowed = true, noSpan, onlyComma, eleClass }) => {
     const commaSeprator = (num) => zeroAllowed
         ? num?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
