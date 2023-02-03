@@ -1,8 +1,9 @@
 This Package contains below React UI Components available to use
 
-* Pagination 
+* Multi Select Dropdown
 * Currency Formatter 
 * Search Input
+* Pagination 
 
 * [Working Demo - Stackblitz](https://stackblitz.com/edit/react-qgvr8r)
 
@@ -43,14 +44,14 @@ const {pageCount, itemCount, currentPage, onPageChange, showLabel, showStartEndP
 
 #### props
 
-| Name        | Description | 
-| ----------- | ----------- |
-| value       | integer     |
-| prefix      | string      |
-| zeroAllowed | boolean     |
-| noSpan      | boolean     |
-| onlyComma   | boolean     |
-| eleClass    | string      |
+| Name        | Description | Default
+| ----------- | ----------- | -----------
+| value       | integer     | N/A
+| prefix      | string      | N/A
+| zeroAllowed | boolean     | true
+| noSpan      | boolean     | N/A
+| onlyComma   | boolean     | N/A
+| eleClass    | string      | N/A
 
 
 ```js
@@ -62,23 +63,47 @@ import { CurrencyFormat } from '@erpardeepjain/rc-pui';
 
 ### `Search Input`
 
-#### props
-onChange, placeholder, waitTime, minSearchChar
-| Name          | Description | 
-| -----------   | ----------- |
-| placeholder   | string      |
-| waitTime      | intiger     |
-| minSearchChar | intiger     |
-| onChange      | function    |
+| Name          | Description | Default
+| -----------   | ----------- | -----------
+| placeholder   | string      | Search
+| waitTime      | intiger     | 500
+| minSearchChar | intiger     | 2
+| onChange      | function    | function
 
 
 ```js
 import { SearchInput } from '@erpardeepjain/rc-pui';
 ...
-const onSearchCB = (val) => {
-    setSearch(val);
+const onSearchCB = (searchedValue) => {
+    console.log(searchedValue);
 };
 ...
 <SearchInput onChange={onSearchCB} placeholder="Search Record" waitTime={300} minSearchChar={2} />
+
+```
+
+### `Multi Select Dropdown`
+
+| Name      | Description | Default
+| --------  | ----------- | -----------
+| name      | string      | N/A
+| label     | string      | Select Multiple
+| options   | array       | []
+| onSelect  | function    | function
+
+
+```js
+import { MultiSelect } from '@erpardeepjain/rc-pui';
+...
+const handleFilter = (selectedItems) => {
+    console.log(selectedItems);
+};
+...
+<MultiSelect 
+    title="Status"
+    options={['completed', 'failed', 'processing']} 
+    name="status"
+    onSelect={handleFilter}
+/>
 
 ```
