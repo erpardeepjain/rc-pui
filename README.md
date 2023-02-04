@@ -20,6 +20,9 @@ npm install --save @erpardeepjain/rc-pui
 
 ### `Pagination`
 
+<img width="596" alt="Screenshot 2023-02-04 at 10 28 47 AM" src="https://user-images.githubusercontent.com/13163739/216749803-6b8c4dae-f122-4dc1-b72a-d0d70bf95db3.png">
+
+
 #### props
 
 | Name              | Description      
@@ -42,6 +45,8 @@ const {pageCount, itemCount, currentPage, onPageChange, showLabel, showStartEndP
 
 ### `Currency Formatter`
 
+<img width="111" alt="Screenshot 2023-02-04 at 10 29 10 AM" src="https://user-images.githubusercontent.com/13163739/216749872-a282b790-85ea-4802-b6a6-396cda98024e.png">
+
 #### props
 
 | Name        | Description | Default
@@ -62,6 +67,8 @@ import { CurrencyFormat } from '@erpardeepjain/rc-pui';
 ```
 
 ### `Search Input`
+                                                      
+<img width="155" alt="Screenshot 2023-02-04 at 10 29 38 AM" src="https://user-images.githubusercontent.com/13163739/216749815-ff75426f-3682-487c-a76e-21d9dcdfd64b.png">
 
 | Name          | Description | Default
 | -----------   | ----------- | -----------
@@ -83,6 +90,8 @@ const onSearchCB = (searchedValue) => {
 ```
 
 ### `Multi Select Dropdown`
+
+<img width="183" alt="Screenshot 2023-02-04 at 10 29 01 AM" src="https://user-images.githubusercontent.com/13163739/216749788-53bc05a9-e791-40a5-9388-d531da278817.png">
 
 | Name      | Description | Default
 | --------  | ----------- | -----------
