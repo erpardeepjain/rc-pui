@@ -31,29 +31,27 @@ const Pagination = ({
     className: "pagination"
   }, showLabel && /*#__PURE__*/React.createElement("span", {
     className: "align-self-center mx-4"
-  }, "Total Entries ", /*#__PURE__*/React.createElement("strong", null, itemCount)), showStartEndPage && /*#__PURE__*/React.createElement("button", {
-    disabled: _currentPage === 1,
-    type: "button",
+  }, "Total Entries ", /*#__PURE__*/React.createElement("strong", null, itemCount)), showStartEndPage && /*#__PURE__*/React.createElement("span", {
+    className: _currentPage === 1 ? "page active disabled" : "page active",
     onKeyDown: () => _onPageChange(1),
     onClick: () => _onPageChange(1),
-    className: "page active"
+    role: "button"
   }, /*#__PURE__*/React.createElement("i", {
     className: "arrow left"
   }), /*#__PURE__*/React.createElement("i", {
     className: "arrow left"
-  })), /*#__PURE__*/React.createElement("button", {
-    disabled: _currentPage === 1,
-    type: "button",
+  })), /*#__PURE__*/React.createElement("span", {
+    className: _currentPage === 1 ? "page active disabled" : "page active",
     onKeyDown: () => prevPage(),
     onClick: () => prevPage(),
-    className: "page active"
+    span: "button"
   }, "Prev"), Array.from(Array(pageCount), (ele, i) => {
     const start = _currentPage + 4 <= pageCount ? _currentPage : pageCount - 4;
     const end = _currentPage + 4 <= pageCount ? _currentPage + 4 : pageCount;
     let dom = "";
     if (i + 1 >= start && i + 1 <= end) {
       dom = /*#__PURE__*/React.createElement("span", {
-        tabIndex: ele + i,
+        tabIndex: i,
         role: "button",
         className: i + 1 === _currentPage ? 'active page' : 'page',
         onClick: () => _onPageChange(i + 1),
@@ -61,18 +59,16 @@ const Pagination = ({
       }, i + 1);
     }
     return dom;
-  }), /*#__PURE__*/React.createElement("button", {
-    disabled: _currentPage === pageCount,
-    className: "page active",
-    type: "button",
+  }), /*#__PURE__*/React.createElement("span", {
+    className: _currentPage === pageCount ? "page active disabled" : "page active",
     onKeyDown: () => nextPage(),
-    onClick: () => nextPage()
-  }, "Next"), showStartEndPage && /*#__PURE__*/React.createElement("button", {
-    disabled: _currentPage === pageCount,
-    type: "button",
+    onClick: () => nextPage(),
+    role: "button"
+  }, "Next"), showStartEndPage && /*#__PURE__*/React.createElement("span", {
+    className: _currentPage === pageCount ? "page active disabled" : "page active",
     onKeyDown: () => _onPageChange(pageCount),
     onClick: () => _onPageChange(pageCount),
-    className: "page active"
+    role: "button"
   }, /*#__PURE__*/React.createElement("i", {
     className: "arrow right"
   }), /*#__PURE__*/React.createElement("i", {

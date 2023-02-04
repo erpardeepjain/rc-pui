@@ -1,7 +1,9 @@
+import Demo from './demo';
+
 function App() {
   return (
     <div className="App">
-      Happy Coding
+      <Demo />
     </div>
   );
 }

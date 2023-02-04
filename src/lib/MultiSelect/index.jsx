@@ -31,6 +31,7 @@ const MultiSelect = ({ name, label, options, onSelect }) => {
             alterListArr.push({label: ele, selected: false});
         });
         setOptionsList(alterListArr);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const _onSelect = (val) => {

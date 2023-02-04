@@ -34,14 +34,24 @@ const Pagination = ({ paginationConfig }) => {
                     }
 
                     {showStartEndPage && 
-                        <button disabled={_currentPage === 1} type="button" onKeyDown={() => _onPageChange(1)} onClick={() => _onPageChange(1)} className="page active">
+                        <span 
+                            className={_currentPage === 1 ? "page active disabled" : "page active"}
+                            onKeyDown={() => _onPageChange(1)} 
+                            onClick={() => _onPageChange(1)} 
+                            role="button" 
+                        >
                             <i className="arrow left" />
                             <i className="arrow left" />
-                        </button>
+                        </span>
                     }
-                    <button disabled={_currentPage === 1} type="button" onKeyDown={() => prevPage()} onClick={() => prevPage()} className="page active">
+                    <span 
+                        className={_currentPage === 1 ? "page active disabled" : "page active"}
+                        onKeyDown={() => prevPage()} 
+                        onClick={() => prevPage()} 
+                        span="button" 
+                    >
                         Prev
-                    </button>
+                    </span>
 
                     {Array.from(Array(pageCount), (ele, i) => {
                         const start = (_currentPage+4) <= pageCount ? _currentPage : (pageCount-4);
@@ -49,7 +59,7 @@ const Pagination = ({ paginationConfig }) => {
                         let dom = "";
                         if(i+1 >= start && i+1 <= end) {
                             dom = <span
-                            tabIndex={ele+i}
+                            tabIndex={i}
                             role="button"
                             className={i+1 === _currentPage ? 'active page' : 'page'}
                             onClick={() => _onPageChange(i+1)}
@@ -61,14 +71,24 @@ const Pagination = ({ paginationConfig }) => {
                         return dom;
                     })}
 
-                    <button disabled={_currentPage === pageCount} className="page active" type="button" onKeyDown={() => nextPage()} onClick={() => nextPage()}>
+                    <span 
+                        className={_currentPage === pageCount ? "page active disabled" : "page active"} 
+                        onKeyDown={() => nextPage()}
+                        onClick={() => nextPage()}
+                        role="button" 
+                    >
                         Next
-                    </button>
+                    </span>
                     {showStartEndPage && 
-                        <button disabled={_currentPage === pageCount} type="button" onKeyDown={() => _onPageChange(pageCount)} onClick={() => _onPageChange(pageCount)} className="page active">
+                        <span
+                            className={_currentPage === pageCount ? "page active disabled" : "page active"} 
+                            onKeyDown={() => _onPageChange(pageCount)} 
+                            onClick={() => _onPageChange(pageCount)}
+                            role="button" 
+                        >
                             <i className="arrow right" />
                             <i className="arrow right" />
-                        </button>
+                        </span>
                     }
                 </div>
             }

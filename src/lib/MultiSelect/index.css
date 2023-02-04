@@ -1,8 +1,8 @@
 .multiSelectBox {margin: 0 10px;}
 .multiSelectBox span {-webkit-user-select: none; -ms-user-select: none; user-select: none; }
-.selectLabel {background: #2b32b2; color: #fff; height: 38px; border-radius: 4px; display: inline-block; min-width: 160px; padding: 8px 16px; cursor: pointer; position: relative;}
+.selectLabel {background: #2b32b2; color: #fff; height: 38px; border-radius: 4px; display: inline-block; min-width: 160px; padding: 8px 16px; cursor: pointer; position: relative; box-sizing: border-box;}
 .listItemsBox { position: absolute; margin-top: 5px; right: auto; box-shadow: 0 2px 4px rgb(15 34 58 / 12%); z-index: 1000; width: 180px; background: #fff;}
-.selectItem { display: inline-block;padding: 5px 16px;cursor: pointer; width:100%}
+.selectItem { display: inline-block;padding: 5px 16px;cursor: pointer; width:100%; box-sizing: border-box;}
 .selectItem:hover {background: #efefef;}
 .unselectedFlag {height: 10px; width: 10px; background: #fff; border: 1px solid #e2e2e2; border-radius: 10px; display: inline-block; margin-right: 8px;}
 .selectedFlag {height: 10px; width: 10px; background: #2b32b2; border: 1px solid #2b32b2; border-radius: 10px; display: inline-block; margin-right: 8px;}

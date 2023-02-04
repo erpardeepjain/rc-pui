@@ -1,7 +1,7 @@
 .pagination {
     list-style: none;
-    float: right;
-    margin: 20px 0;
+    margin: 10px auto;
+    text-align: center;
   }
   .pagination .page {
     display: inline-block;
@@ -14,7 +14,7 @@
     background-color: #2b32b2;
     color: #fff;
   }
-  .page.active:disabled {
+  .page.active:disabled, .page.active.disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }

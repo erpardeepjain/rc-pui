@@ -34,6 +34,7 @@ const MultiSelect = ({
       });
     });
     setOptionsList(alterListArr);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const _onSelect = val => {
     const _selectionArr = selectionArr;
