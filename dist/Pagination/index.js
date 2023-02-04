@@ -30,7 +30,7 @@ const Pagination = ({
   return /*#__PURE__*/React.createElement("div", null, pageCount > 1 && /*#__PURE__*/React.createElement("div", {
     className: "pagination"
   }, showLabel && /*#__PURE__*/React.createElement("span", {
-    className: "align-self-center mx-4"
+    className: "mr15"
   }, "Total Entries ", /*#__PURE__*/React.createElement("strong", null, itemCount)), showStartEndPage && /*#__PURE__*/React.createElement("span", {
     className: _currentPage === 1 ? "page active disabled" : "page active",
     onKeyDown: () => _onPageChange(1),

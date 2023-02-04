@@ -1,6 +1,6 @@
 {
   "name": "@erpardeepjain/rc-pui",
-  "description": "React UI Components",
+  "description": "React UI Components Library",
   "author": "erpardeepjain",
   "keywords": [
     "react",
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/preset-react": "^7.18.6",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -50,7 +51,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src/lib -d dist --copy-files"
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src/lib -d dist --copy-files",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
