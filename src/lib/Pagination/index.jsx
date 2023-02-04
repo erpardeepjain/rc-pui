@@ -28,7 +28,7 @@ const Pagination = ({ paginationConfig }) => {
         <div>
             { pageCount > 1 &&
                 <div className="pagination">
-                    {showLabel && <span className="align-self-center mx-4">
+                    {showLabel && <span className="mr15">
                         Total Entries <strong>{itemCount}</strong>
                     </span>
                     }

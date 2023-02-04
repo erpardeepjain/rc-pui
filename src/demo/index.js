@@ -22,7 +22,7 @@ const Demo = () => {
         itemCount: 200,
         pageCount: 10,
         onPageChange: onPageChange,
-        showLabel: false,
+        showLabel: true,
         showStartEndPage: true,
     };
 

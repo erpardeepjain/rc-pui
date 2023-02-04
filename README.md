@@ -5,9 +5,9 @@ This Package contains below React UI Components available to use
 * Search Input
 * Pagination 
 
-* [Working Demo - Stackblitz](https://stackblitz.com/edit/react-qgvr8r)
+💥 [Working Demo - Stackblitz](https://stackblitz.com/edit/react-qgvr8r)
 
-** Documentation is still incomplete, will try to update asap, PR's for New Components are Welcomed
+**Documentation is still incomplete, will try to update asap, PR's for New Components are Welcomed**
 
 ## Install
 

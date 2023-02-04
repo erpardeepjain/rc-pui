@@ -7,8 +7,12 @@
     "components",
     "ui",
     "paginator",
+    "paginattion",
     "search",
-    "currency-formatter"
+    "currency-formatter",
+    "Multi Select Dropdown",
+    "multilist",
+    "multiselect"
   ],
   "version": "0.7.0",
   "private": false,
