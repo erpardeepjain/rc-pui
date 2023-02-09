@@ -60,6 +60,7 @@ const Pagination = ({ paginationConfig }) => {
                         if(i+1 >= start && i+1 <= end) {
                             dom = <span
                             tabIndex={i}
+                            key={`pagination${i}`}
                             role="button"
                             className={i+1 === _currentPage ? 'active page' : 'page'}
                             onClick={() => _onPageChange(i+1)}

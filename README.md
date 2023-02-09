@@ -97,6 +97,7 @@ const onSearchCB = (searchedValue) => {
 | name      | string      | N/A
 | label     | string      | Select Multiple
 | options   | array       | []
+| selectAll | boolean     | false
 | onSelect  | function    | function
 
 
@@ -111,6 +112,7 @@ const handleFilter = (selectedItems) => {
     title="Status"
     options={['completed', 'failed', 'processing']} 
     name="status"
+    selectAll="true"
     onSelect={handleFilter}
 />
 

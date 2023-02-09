@@ -2,28 +2,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 
-function useOutsideAlerter(ref) {
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-          console.log("You clicked outside of me!");
-        }
-      }
-      document.addEventListener("mousedown", handleClickOutside);
-
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [ref]);
-}
-
-const MultiSelect = ({ name, label, options, onSelect }) => {
+const MultiSelect = ({ name, title, options, onSelect, selectAll = false }) => {
     const wrapperRef = useRef(null);
-    useOutsideAlerter(wrapperRef);
-
-    const [showList, setShowList] = useState(false);
+    
+    const [allSelected, setAllSelected] = useState(false);
     const [selectionArr, setSelectionArr] = useState([]);
     const [optionsList, setOptionsList] = useState([]);
+    const [showList, setShowList] = useState(false);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target) && showList) {
+                setShowList(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [wrapperRef, showList]);
 
     useEffect(() => {
         const alterListArr = [];
@@ -35,29 +33,51 @@ const MultiSelect = ({ name, label, options, onSelect }) => {
     }, []);
 
     const _onSelect = (val) => {
-        const _selectionArr = selectionArr;
-        const itemIndex = _selectionArr.indexOf(val?.label);
-        if(itemIndex !== -1) {
-            val.selected = false;
-            _selectionArr.splice(itemIndex, 1);
+        if(val === "all") {
+            setSelectionArr(!allSelected ? options : []);
+            onSelect(!allSelected ? options : [], name);
+            setAllSelected(!allSelected);
+            optionsList.forEach(ele => ele.selected = false);
+            setShowList(false);
         } else {
-            val.selected = true;
-            _selectionArr.push(val?.label);
+            const _selectionArr = selectionArr;
+            const itemIndex = _selectionArr.indexOf(val?.label);
+            if(itemIndex !== -1) {
+                val.selected = false;
+                _selectionArr.splice(itemIndex, 1);
+            } else {
+                val.selected = true;
+                _selectionArr.push(val?.label);
+            }
+            setSelectionArr(_selectionArr);
+            onSelect(selectionArr, name);
+
+            if(_selectionArr?.length === options?.length) {
+                setAllSelected(true);
+            } else {
+                setAllSelected(false);
+            }
         }
-        setSelectionArr(_selectionArr);
-        onSelect(selectionArr, name);
     }
 
     return (
         <div className="multiSelectBox" ref={wrapperRef}>
             <span onClick={() => setShowList(!showList)} className="selectLabel">
-                {label || 'Select Multiple'}
+                {title || 'Select Multiple'}
                 <span className={showList ? "arrow_up" : "arrow_down"} />
             </span>
             <div className="listItemsBox">
+                {showList && selectAll && 
+                    <span onClick={() => _onSelect("all")} value="all" className="selectItem">
+                        {/* <span className={allSelected ? "selectedFlag" : "unselectedFlag"} /> */}
+                        <input type="checkbox" readOnly checked={allSelected} />
+                        All
+                    </span>
+                }
                 {showList && optionsList?.length > 0 && optionsList.map(ele => (
-                    <span onClick={() => _onSelect(ele)} value={ele?.label} className="selectItem">
-                        <span className={ele?.selected ? "selectedFlag" : "unselectedFlag"} />
+                    <span onClick={() => _onSelect(ele)} key={`multiSelect-${ele}`} value={ele?.label} className="selectItem">
+                        {/* <span className={(ele?.selected || allSelected) ? "selectedFlag" : "unselectedFlag"} /> */}
+                        <input type="checkbox" readOnly checked={ele?.selected || allSelected} />
                         {ele?.label[0].toUpperCase() + ele?.label?.slice(1,ele?.label?.length)}
                     </span>
                 ))}

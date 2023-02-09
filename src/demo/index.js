@@ -54,6 +54,7 @@ const Demo = () => {
                 title="Status"
                 options={['completed', 'failed', 'processing']}
                 name="status"
+                selectAll="true"
                 onSelect={handleFilter}
                 />
                 <hr />

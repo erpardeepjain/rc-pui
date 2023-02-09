@@ -1,10 +1,14 @@
 .multiSelectBox {margin: 0 10px;}
 .multiSelectBox span {-webkit-user-select: none; -ms-user-select: none; user-select: none; }
-.selectLabel {background: #2b32b2; color: #fff; height: 38px; border-radius: 4px; display: inline-block; min-width: 160px; padding: 8px 16px; cursor: pointer; position: relative; box-sizing: border-box;}
-.listItemsBox { position: absolute; margin-top: 5px; right: auto; box-shadow: 0 2px 4px rgb(15 34 58 / 12%); z-index: 1000; width: 180px; background: #fff;}
-.selectItem { display: inline-block;padding: 5px 16px;cursor: pointer; width:100%; box-sizing: border-box;}
+.multiSelectBox span input[type="checkbox"] {margin-right: 8px;}
+.selectLabel {background: #2b32b2; color: #fff; height: 38px; border-radius: 4px; display: inline-block; min-width: 160px; padding: 8px 16px; cursor: pointer; position: relative; padding-right: 30px; box-sizing: border-box;}
+.listItemsBox { position: absolute; margin-top: 5px; right: auto; box-shadow: 0 2px 4px rgb(15 34 58 / 12%); z-index: 1; width: 180px; background: #fff;}
+.selectItem { display: flex;padding: 5px 16px;cursor: pointer; width:100%; box-sizing: border-box;}
 .selectItem:hover {background: #efefef;}
-.unselectedFlag {height: 10px; width: 10px; background: #fff; border: 1px solid #e2e2e2; border-radius: 10px; display: inline-block; margin-right: 8px;}
-.selectedFlag {height: 10px; width: 10px; background: #2b32b2; border: 1px solid #2b32b2; border-radius: 10px; display: inline-block; margin-right: 8px;}
+
 .arrow_up { border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid #fff; position: absolute; top: 16px; right: 12px;} 
 .arrow_down { border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #fff; display: inline-block; position: absolute; right: 12px; top: 16px;}
+
+/* Will be using later on for new UI */
+/* .unselectedFlag {height: 10px; width: 10px; background: #fff; border: 1px solid #e2e2e2; border-radius: 10px; display: inline-block; margin-right: 8px;}
+.selectedFlag {height: 10px; width: 10px; background: #2b32b2; border: 1px solid #2b32b2; border-radius: 10px; display: inline-block; margin-right: 8px;} */
