@@ -90,7 +90,8 @@ const onSearchCB = (searchedValue) => {
 
 ### Multi Select Dropdown
 
-<img width="183" alt="Screenshot 2023-02-04 at 10 29 01 AM" src="https://user-images.githubusercontent.com/13163739/216749788-53bc05a9-e791-40a5-9388-d531da278817.png">
+<img width="182" alt="Screenshot 2023-02-09 at 6 22 14 PM" src="https://user-images.githubusercontent.com/13163739/217821597-62aceceb-37dd-4a24-9e18-75abe6b90e2c.png">
+
 
 | Name      | Description | Default
 | --------  | ----------- | -----------
